@@ -1,0 +1,135 @@
+* {
+    --font-color: rgb(43, 45, 54);
+    --font-fam: "DINPro",sans-serif;
+    --white-bg-color: #f5f5fa;
+    --ensam-purple: #8d2363;
+    --ensam-orange: #f29400;
+}
+
+p, .st-emotion-cache-16idsys p {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.st-emotion-cache-1y4p8pa {
+    margin-top: 6rem;
+    padding: 0 1rem 3rem 1rem;
+    background-color: white;
+}
+
+.st-emotion-cache-10trblm {
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--ensam-purple);
+    font-family: var(--font-fam);
+}
+
+/* Style of the Browse button */
+.st-emotion-cache-1on073z .st-emotion-cache-1gulkj5 {
+    background-color: var(--white-bg-color);
+    padding: 0;
+}
+
+.st-emotion-cache-u8hs99 {
+    display: none;
+}
+
+.st-emotion-cache-7ym5gk {
+    font-family: var(--font-fam);
+    min-width: 259px;
+    height: 3rem;
+    line-height: 2.6rem;
+    text-transform: uppercase;
+    background: var(--ensam-orange);
+    cursor: pointer;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    transition: all 0.1s ease-in-out;
+    border: solid 2px transparent;
+    border-radius: 0
+}
+
+.st-emotion-cache-7ym5gk:hover {
+    border: solid 2px var(--ensam-orange);
+    color: var(--ensam-orange);
+    background-color: transparent;
+}
+
+.st-emotion-cache-7ym5gk.ef3psqc11:focus {
+    border: solid 2px var(--ensam-orange);
+    color: var(--ensam-orange);
+    background-color: transparent;
+}
+
+.element-container.st-emotion-cache-90qg9c.e1f1d6gn2 .row-widget.stButton {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Style of the selectbox*/
+.st-ai.st-aj.st-be.st-bf.st-b8, .st-ae.st-af.st-ag.st-ai.st-aj.st-bd.st-be.st-b8  {
+    border: solid 2px #ebebf5;
+    background-color: white;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    min-height: 3rem;
+}
+
+.st-ai.st-aj.st-be.st-bf.st-b8:hover, .st-ae.st-af.st-ag.st-ai.st-aj.st-bd.st-be.st-b8:hover {
+    border: solid 2px var(--ensam-purple);
+}
+
+.st-bx, .st-ae .st-bw {
+    background-color: white;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.st-be.st-bf.st-by.st-bz span.st-ae.st-ag.st-ah{
+    background-color: var(--ensam-purple);
+}
+
+/* Style of the choose analysis button */
+
+.st-emotion-cache-7ym5gk p {
+    font-weight: bold;
+}
+
+/* Checkboxes */
+
+.st-as.st-b3 span.st-dt.st-b1.st-br.st-er {
+    background-color: var(--ensam-purple);
+    border: solid var(--ensam-purple);
+}
+
+/* Align div */
+
+.st-emotion-cache-ocqkz7 {
+    gap: unset;
+}
+
+/* Slider */
+
+.st-dd.st-b8.st-de {
+    background: var(--ensam-purple);
+}
+
+.st-emotion-cache-10y5sf6 {
+    color: var(--ensam-purple);
+}
+
+/* Slider text */
+.st-emotion-cache-1inwz65 {
+    font-family: inherit;
+}
+
+/* Slider ball */
+
+.st-emotion-cache-1vzeuhh {
+    background-color: var(--ensam-purple);
+}

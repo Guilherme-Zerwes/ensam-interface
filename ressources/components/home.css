@@ -1,0 +1,66 @@
+* {
+  --font-color: rgb(43, 45, 54);
+  --font-fam: "DINPro",sans-serif;
+  --white-bg-color: #f5f5fa;
+  --ensam-purple: #8d2363;
+  --ensam-orange: #f29400;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.main-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--ensam-purple);
+  margin: 0.75em 0;
+  line-height: 1.2;
+  font-family: var(--font-fam);
+}
+
+.main-content p {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.main-content a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.main-content button {
+  font-family: var(--font-fam);
+  min-width: 259px;
+  height: 4.6rem;
+  line-height: 4.2rem;
+  text-transform: uppercase;
+  background: var(--ensam-orange);
+  cursor: pointer;
+  padding: 0 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: all 0.1s ease-in-out;
+  border: solid 2px transparent;
+  border-radius: 0
+}
+
+.main-content button:hover {
+  border: solid 2px var(--ensam-orange);
+  background-color: transparent;
+}
+
+.main-content a:hover {
+  color: var(--ensam-orange);
+}
+
+.main-content #double_arrow {
+  font-size: 1.8rem;
+}

@@ -1,0 +1,80 @@
+* {
+    --font-color: rgb(43, 45, 54);
+    --font-fam: "DINPro",sans-serif;
+    --white-bg-color: #f5f5fa;
+    --ensam-purple: #8d2363;
+    --ensam-orange: #f29400;
+}
+
+a, a:hover {
+    text-decoration: none;
+    text-align: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.central-content {
+    min-width: 700px;
+    max-width: 800px;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content-box {
+    border: solid 2px transparent;
+    background-color: white;
+    margin-bottom: 1rem;
+    max-width: 380px;
+    height: 470px;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+}
+
+.content-box:hover {
+    cursor: pointer;
+    border: solid 1px var(--ensam-purple);
+}
+
+.content-box img {
+    display: block;
+    height: 175px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% 20%;
+}
+
+.content-box span.text {
+    width: 80%;
+    display: block;
+    text-align: justify;
+    font-family: var(--font-fam);
+    color: var(--font-color);
+    font-size: 1.2rem;
+}
+
+.content-box span.text h1 {
+    text-align: center;
+    color: var(--ensam-purple);
+    font-size: 3rem;
+}
+
+.content-box span.plus {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ensam-purple);
+    font-size: 2.5rem;
+    font-weight: 300;
+    transition: all 0.2s ease-in-out;
+}
+
+.content-box span.plus:hover {
+    transform: rotate(90deg);
+}
