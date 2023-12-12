@@ -41,8 +41,9 @@ with header:
         st.markdown(html.read(), unsafe_allow_html=True)
 
 def call_clust_model(algo, hyper):
+    df = pd.read_csv('data/dataset.csv')
     st.session_state.metrics = 0
-    st.session_state.metrics = models.train_clust_model(algo, hyper)
+    st.session_state.metrics = models.train_clust_model(algo, hyper, df)
 
 def zeroMet():
     st.session_state.metrics = 0

@@ -41,8 +41,9 @@ with header:
         st.markdown(html.read(), unsafe_allow_html=True)
 
 def call_desc_model(algo, not_apply, hyper):
+    df = pd.read_csv('data/dataset.csv')
     st.session_state.metrics = 0
-    st.session_state.metrics = models.train_desc_model(algo, hyper, not_apply)
+    st.session_state.metrics = models.train_desc_model(algo, hyper, df, not_apply)
 
 def zeroMet():
     st.session_state.metrics = 0

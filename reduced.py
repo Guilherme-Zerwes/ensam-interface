@@ -28,9 +28,9 @@ import os
 #     print(df.head())
 #     return reduced_data
 
-def reduce_order(target):
+def reduce_order(target, data):
     '''Proper Orthogonal Decomposition'''
-    df = pd.read_csv('data/processed_dataset.csv') if os.path.exists('data/processed_dataset.csv') else pd.read_csv('data/dataset.csv')
+    df = data
     df.drop(columns='Unnamed: 0', inplace=True)
     X = df.drop(columns=target)
     y = df[target]
@@ -48,5 +48,6 @@ def reduce_order(target):
 
     df = pd.DataFrame(np.transpose(reduced_data), columns=list(range(rank)))
     df[target] = y
-    print(df.head())
-    df.to_csv('data/processed_dataset.csv')
+    print('Order recuded from', X.shape, 'to', np.transpose(reduced_data).shape)
+    # df.to_csv('data/processed_dataset.csv')
+    return df

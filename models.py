@@ -9,8 +9,8 @@ from sklearn.model_selection import train_test_split
 import visualization
 
 
-def train_reg_model(algo, target, hyper):
-    df = pd.read_csv('data/processed_dataset.csv') if os.path.exists('data/processed_dataset.csv') else pd.read_csv('data/dataset.csv')
+def train_reg_model(algo, target, hyper, data):
+    df = data
     X = df.drop(columns=target)
     y = df[target]
     x_train, x_test, y_train, y_test = train_test_split(np.asarray(X), np.asarray(y))
@@ -113,8 +113,8 @@ def train_reg_model(algo, target, hyper):
 
 ####################################
 
-def train_class_model(algo, target, hyper):
-    df = pd.read_csv('data/processed_dataset.csv') if os.path.exists('data/processed_dataset.csv') else pd.read_csv('data/dataset.csv')
+def train_class_model(algo, target, hyper, data):
+    df = data
     X = df.drop(columns=target)
     y = df[target]
     x_train, x_test, y_train, y_test = train_test_split(np.asarray(X), np.asarray(y))
@@ -160,8 +160,8 @@ def train_class_model(algo, target, hyper):
 
 ####################################
 
-def train_desc_model(algo, hyper, no = None):
-    df = pd.read_csv('data/processed_dataset.csv') if os.path.exists('data/processed_dataset.csv') else pd.read_csv('data/dataset.csv')
+def train_desc_model(algo, hyper, data, no = None):
+    df = data
     
     if no != None:
         df = df.drop(columns=no)
@@ -208,8 +208,8 @@ def train_desc_model(algo, hyper, no = None):
 
 ####################################
 
-def train_clust_model(algo, hyper):
-    df = pd.read_csv('data/processed_dataset.csv') if os.path.exists('data/processed_dataset.csv') else pd.read_csv('data/dataset.csv')
+def train_clust_model(algo, hyper, data):
+    df = data
 
     if algo == 'K-means Clustering':
         from sklearn.cluster import KMeans

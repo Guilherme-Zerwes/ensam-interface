@@ -5,6 +5,7 @@ import numpy as np
 import os
 from PIL import Image
 import models
+import reduced
 
 with Image.open('./ressources/imgs/favicon.png') as img:
 
@@ -42,9 +43,11 @@ with header:
         st.markdown(html.read(), unsafe_allow_html=True)
 
 def call_reg_model(algo, targ, hyper):
-    print(algo, 'Model called')
+    df = pd.read_csv('data/processed_dataset.csv')
+    if reduce:
+        df = reduced.reduce_order(targ, df)
     st.session_state.metrics = 0
-    st.session_state.metrics = models.train_reg_model(algo, targ, hyper)
+    st.session_state.metrics = models.train_reg_model(algo, targ, hyper, df)
     return
 
 def zeroMet():
@@ -91,6 +94,7 @@ if os.path.exists('data/processed_dataset.csv') or os.path.exists('data/dataset.
     left,right = st.columns(2)
 
     left.button('Run!', on_click=call_reg_model, args=[algorithm, target, hyper_parms])
+    reduce = right.checkbox('Reduced order', help="Applies Proper Orthogonal Decomposition to combine the properties and keeps only the most relevant ones, which enables training a model with a smaller overall dimension.")
     vis = right.checkbox('Visualize result metrics')
 
     display_metrics()

@@ -49,12 +49,12 @@ with body:
 
     if file:
         df = pd.read_csv(file, delimiter=delimiter)
-        df.to_csv('data/dataset.csv')
+        df.to_csv('data/dataset.csv', index=False)
         st.write("Data preview")
         st.dataframe(df.head())
         
-        make_profile = st.checkbox('Generate profile report?')
-        preprocess = st.checkbox('Preprocess your data?')
+        make_profile = st.checkbox('Generate profile report?', help="Generates a exploratory data analysis report")
+        preprocess = st.checkbox('Preprocess your data?', help="Pre-processes the dataset. Removes numerical missing values by inputing with the median value along said column. Also aplies a standart scalar that removes the average and turns the standart deviation to 1. At last, it aplies OneHotEncoding to the categorical data.")
 
         if preprocess:
             left,right = st.columns([1,1])
@@ -69,7 +69,7 @@ with body:
                 df_process = df.drop(not_apply, axis=1)
                 df_process = process.process_data(df_process)
                 df_process[not_apply] = df[not_apply]
-                df_process.to_csv('data/processed_dataset.csv')
+                df_process.to_csv('data/dataset.csv')
                 st.write('Your preprocessing was successful!')
         
         change_page = st.button('Choose analysis >>', key=1)
