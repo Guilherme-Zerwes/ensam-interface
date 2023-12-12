@@ -31,7 +31,7 @@ import os
 def reduce_order(target, data):
     '''Proper Orthogonal Decomposition'''
     df = data
-    df.drop(columns='Unnamed: 0', inplace=True)
+    # df.drop(columns='Unnamed: 0', inplace=True)
     X = df.drop(columns=target)
     y = df[target]
 
