@@ -6,6 +6,7 @@ import os
 from PIL import Image
 import models
 import reduced
+import inspection
 
 with Image.open('./ressources/imgs/favicon.png') as img:
 
@@ -43,11 +44,18 @@ with header:
         st.markdown(html.read(), unsafe_allow_html=True)
 
 def call_reg_model(algo, targ, hyper):
-    df = pd.read_csv('data/processed_dataset.csv')
+    df = pd.read_csv('data/dataset.csv')
+    if not inspection.verify_str(df):
+        st.warning('Your dataset contains non floats or integers values')
+        return
+    if not inspection.very_NaN(df):
+        st.warning('Your dataset has missing values')
+        return
     if reduce:
         df = reduced.reduce_order(targ, df)
     st.session_state.metrics = 0
     st.session_state.metrics = models.train_reg_model(algo, targ, hyper, df)
+    st.success("Dataset analysed sucessfully!")
     return
 
 def zeroMet():
@@ -81,8 +89,8 @@ def display_hyps(algo):
 hyp_dict = pd.read_excel('./hyperparams.xlsx').to_dict('records')
 
 #Frontend
-if os.path.exists('data/processed_dataset.csv') or os.path.exists('data/dataset.csv'):
-    df = pd.read_csv('data/processed_dataset.csv') if os.path.exists('data/processed_dataset.csv') else pd.read_csv('data/dataset.csv')
+if os.path.exists('data/dataset.csv'):
+    df = pd.read_csv('data/dataset.csv')
     
     st.markdown('<h1>Regression Analysis</h1>', unsafe_allow_html=True)
     algorithm = st.selectbox('Select the algorithm', options=reg_ops, on_change=zeroMet)

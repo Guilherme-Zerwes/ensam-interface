@@ -9,7 +9,7 @@ plt.rcParams['figure.figsize'] = (6,3)
 plt.rcParams['axes.titlesize'] = 10
 plt.rcParams['axes.labelsize'] = 8
 plt.rcParams['axes.grid'] = True
-plt.rcParams['font.family'] = 'sans-serif'
+# plt.rcParams['font.family'] = 'sans-serif'
 
 def reg_vis(algorithm, model, X, Y, df, **kwargs):
     
@@ -129,7 +129,7 @@ def class_vis(algorithm, model, X, Y, df, **kwargs):
         #Random forrest single tree plot
         fn = df[0].keys()
 
-        fig_tree, axes_tree = plt.subplots(dpi=300)
+        fig_tree, axes_tree = plt.subplots()
         axes_tree.set_title('Decision Tree')
         tree.plot_tree(model, feature_names=fn, class_names=True, filled = True)
         metrics.append(fig_tree)
@@ -155,7 +155,7 @@ def class_vis(algorithm, model, X, Y, df, **kwargs):
         #Random forrest single tree plot
         fn = df[0].keys()
         
-        fig_tree, axes_tree = plt.subplots(dpi=300)
+        fig_tree, axes_tree = plt.subplots()
         axes_tree.set_title('Decision Tree')
         tree.plot_tree(model.estimators_[0], feature_names=fn, class_names=True, filled = True)
         metrics.append(fig_tree)

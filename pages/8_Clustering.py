@@ -76,8 +76,8 @@ def display_hyps(algo):
 hyp_dict = pd.read_excel('./hyperparams.xlsx').to_dict('records')
 
 #Frontend
-if os.path.exists('data/processed_dataset.csv') or os.path.exists('data/dataset.csv'):
-    df = pd.read_csv('data/processed_dataset.csv') if os.path.exists('data/processed_dataset.csv') else pd.read_csv('data/dataset.csv')
+if os.path.exists('data/dataset.csv'):
+    df = pd.read_csv('data/dataset.csv')
 
     st.markdown('<h1>Clustering Analysis</h1>', unsafe_allow_html=True)
 

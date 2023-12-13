@@ -69,8 +69,9 @@ with body:
                 df_process = df.drop(not_apply, axis=1)
                 df_process = process.process_data(df_process)
                 df_process[not_apply] = df[not_apply]
-                df_process.to_csv('data/dataset.csv')
+                df_process.to_csv('data/dataset.csv', index=False)
                 st.write('Your preprocessing was successful!')
+                switch_page("Analysis")
         
         change_page = st.button('Choose analysis >>', key=1)
 
