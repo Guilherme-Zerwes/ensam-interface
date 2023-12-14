@@ -43,10 +43,10 @@ with header:
 
 def call_desc_model(algo, not_apply, hyper):
     df = pd.read_csv('data/dataset.csv')
-    if not inspection.verify_str(df):
+    if not inspection.verify_str(df.drop(columns=not_apply)):
         st.warning('Your dataset contains non floats or integers values')
         return
-    if not inspection.very_NaN(df):
+    if not inspection.very_NaN(df.drop(columns=not_apply)):
         st.warning('Your dataset has missing values')
         return
     st.session_state.metrics = 0

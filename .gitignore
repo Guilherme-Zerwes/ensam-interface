@@ -1,1 +1,4 @@
 model.pickle
+data/model.pickle
+data/dataset.csv
+__pycache__/*

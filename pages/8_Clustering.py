@@ -5,6 +5,7 @@ import numpy as np
 import os
 from PIL import Image
 import models
+import inspection
 
 with Image.open('./ressources/imgs/favicon.png') as img:
     st.set_page_config(
@@ -42,6 +43,12 @@ with header:
 
 def call_clust_model(algo, hyper):
     df = pd.read_csv('data/dataset.csv')
+    if not inspection.verify_str(df):
+        st.warning('Your dataset contains non floats or integers values')
+        return
+    if not inspection.very_NaN(df):
+        st.warning('Your dataset has missing values')
+        return
     st.session_state.metrics = 0
     st.session_state.metrics = models.train_clust_model(algo, hyper, df)
 
