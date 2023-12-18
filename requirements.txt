@@ -6,4 +6,4 @@ pillow
 streamlit-extras
 matplotlib
 seaborn
-ydata-profiling
+ydata-profiling==4.6.1
