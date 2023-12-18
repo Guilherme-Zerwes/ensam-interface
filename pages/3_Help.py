@@ -38,6 +38,7 @@ st.markdown('<h1>Help Files</h1>', unsafe_allow_html=True)
 
 file_names = os.listdir('./ressources/files')
 counter = 0
+print(file_names)
 for i in range(len(file_names)):
     if file_names[i].startswith('_'):
         nice_file_names = file_names[i].removeprefix(f'_{counter + 1}_').replace('_',' ').removesuffix('.pdf')
