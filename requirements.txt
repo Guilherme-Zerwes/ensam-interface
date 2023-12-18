@@ -2,9 +2,11 @@ numpy
 pandas
 streamlit
 scikit-learn
+tensorflow
 pillow
 streamlit-extras
 matplotlib
 seaborn
 ydata-profiling==4.6.1
 openpyxl==3.1.2
+streamlit-pandas-profiling==0.1.3
