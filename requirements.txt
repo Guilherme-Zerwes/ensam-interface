@@ -6,3 +6,4 @@ pillow
 streamlit-extras
 matplotlib
 seaborn
+ydata-profiling
