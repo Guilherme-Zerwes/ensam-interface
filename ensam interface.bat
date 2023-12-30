@@ -1,0 +1,1 @@
+START /MIN streamlit run app.py
